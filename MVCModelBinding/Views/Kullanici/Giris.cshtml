@@ -1,0 +1,20 @@
+﻿@using MVCModelBinding.Models
+@model Kullanici
+
+@using (Html.BeginForm())
+{   //<form method="post">
+
+    <div>
+        @*<label>KullaniciAdi</label>*@
+        @Html.LabelFor(x=> x.KullaniciAdi)
+
+        @*<input type="text" name="KullaniciAdi" required value="@Model.KullaniciAdi" />*@
+        @Html.TextBoxFor(x=> x.KullaniciAdi)
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.Sifre)
+        @Html.TextBoxFor(x=>x.Sifre, new { @type="password", @class="form-control", @required="required", @sinif="501"})
+    </div>
+    <button>Giriş Yap</button>
+} 
+    @*</form>*@

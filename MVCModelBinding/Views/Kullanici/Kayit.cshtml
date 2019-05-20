@@ -1,0 +1,26 @@
+﻿@using MVCModelBinding.Models
+@model Kullanici
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBoxFor(x => x.KullaniciAdi, htmlAttributes: new { @placeholder = "kullanıcı adı" })
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.Sifre, new { @placeholder="Şifre", @type="pass"})
+    </div>
+    <div>
+        @Html.TextBox("SifreTekrar",null,new { @placeholder="Şifre (tekrar)", @type="pass"})
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.AdSoyad, new { @placeholder="Ad Soyad"})
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.DogumTarihi, new { @type="date"})
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.CalisiyorMu, new { @type="checkbox"})
+        @Html.LabelFor(x=>x.CalisiyorMu)
+    </div>
+    <button>Kaydet</button>
+}
